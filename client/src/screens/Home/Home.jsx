@@ -1,5 +1,4 @@
-import NavBar from '../../components/NavBar/NavBar'
-import Footer from '../../components/Footer/Footer'
+import Layout from '../../components/Layout/Layout'
 import LandingImage from '../../components/LandingImage/LandingImage'
 import './Home.css'
 // import axios from 'axios'
@@ -14,14 +13,16 @@ function Home(props) {
   console.log("this is props", props)
  
   return (
-    <body>
-    
-      <NavBar />
-      <LandingImage />
-      <CurrentReport raleigh={raleigh} newYork={newYork} copenhagen={copenhagen} />
-          <Footer />
-        
-      </body>
+    <Layout>
+      <div>
+        <div>
+          <LandingImage/>
+        </div>
+        <main>
+          <CurrentReport raleigh={raleigh} newYork={newYork} copenhagen={copenhagen}/>
+        </main>
+      </div>
+    </Layout>
       
         
       
