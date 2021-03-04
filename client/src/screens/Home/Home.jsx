@@ -14,15 +14,18 @@ function Home(props) {
   console.log("this is props", props)
  
   return (
-    <div>
+    <body>
     
       <NavBar />
       <LandingImage />
-      <CurrentReport raleigh={raleigh} newYork={newYork} copenhagen={copenhagen}/>
-        <Footer />
+      <CurrentReport raleigh={raleigh} newYork={newYork} copenhagen={copenhagen} />
+          <Footer />
+        
+      </body>
+      
         
       
-      </div>
+      
   )
 } 
 

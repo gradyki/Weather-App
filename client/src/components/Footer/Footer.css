@@ -1,0 +1,7 @@
+.footer {
+  display: flex !important;
+  justify-content: center !important;
+  background-color: var(--tone6) !important;
+  border-top: 2px solid var(--tone2) !important;
+  height: 50px !important;
+}
