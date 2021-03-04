@@ -1,0 +1,11 @@
+.report-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.report-container {
+  border: 5px red;
+}

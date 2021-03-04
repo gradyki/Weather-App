@@ -1,0 +1,14 @@
+.nav {
+  background-color: var(--tone6);
+  height: 50px;
+  border-bottom: 2px solid var(--tone2);
+}
+
+.nav a {
+  color: var(--tone5);
+  padding: 15px;
+}
+
+.nav a:hover {
+  color: var(--tone2);
+}

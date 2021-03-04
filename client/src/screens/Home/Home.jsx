@@ -1,42 +1,28 @@
-import Nav from '../../components/Nav'
-import Footer from '../../components/Footer'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import {useEffect, useState } from 'react'
-import { currentURL } from '../../services/index'
+import NavBar from '../../components/NavBar/NavBar'
+import Footer from '../../components/Footer/Footer'
+import LandingImage from '../../components/LandingImage/LandingImage'
+import './Home.css'
+// import axios from 'axios'
+// // import {useEffect, useState } from 'react'
+// import { currentURL } from '../../services/index'
+import CurrentReport from '../../components/CurrentReport/CurrentReport'
 
 
-function Home() {
-  const [raleigh, setRaleigh] = useState([])
+function Home(props) {
+  const { raleigh, newYork, copenhagen } = props
 
-  console.log(`${currentURL}Raleigh`)
-
-
-  useEffect(() => {
-    const getCurrent = async () => {
-      const resp = await axios.get(`${currentURL}Raleigh`)
-      setRaleigh(resp.data)
-    }
-    getCurrent()
-  },[])
-
-  console.log(raleigh)
-console.log(raleigh.current.weather_icons[0])
-
+  console.log("this is props", props)
+ 
   return (
     <div>
-      <Nav />
-<Link to='/detail'>
-      <div >
-          <h1>{raleigh.location.name}, {raleigh.location.region}</h1>
-          <img src={raleigh.current.weather_icons[0]} />
-          <h5>{Math.floor((raleigh.current.temperature * 9/5) + 32 )}</h5>
-        </div>
-        </Link>
-      <div>
+    
+      <NavBar />
+      <LandingImage />
+      <CurrentReport raleigh={raleigh} newYork={newYork} copenhagen={copenhagen}/>
         <Footer />
-        </div>
-    </div>
+        
+      
+      </div>
   )
 } 
 

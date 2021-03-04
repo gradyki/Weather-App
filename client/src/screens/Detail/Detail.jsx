@@ -1,10 +1,10 @@
-import Nav from '../../components/Nav'
-import Footer from '../../components/Footer'
+import NavBar from '../../components/NavBar/NavBar'
+import Footer from '../../components/Footer/Footer'
 
 function Detail() {
   return (
     <div>
-      <Nav />
+      <NavBar />
       <div>
         Detail Page test
       </div>

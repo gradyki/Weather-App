@@ -1,0 +1,21 @@
+.landing-title {
+  padding-bottom: 50px;
+}
+
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.landing-title h1 {
+  color: var(--tone5);
+  font-family: Alegreya;
+  font-weight: 900 bold;
+  position: absolute;
+  text-shadow: 2px 2px var(--tone2);
+}
+
+#landing {
+  height: 500px;
+}
