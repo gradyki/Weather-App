@@ -1,6 +1,8 @@
 import './CurrentReport.css'
 import { Link } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
+import { timeFormat } from '../../services/utils'
+
 
 
 function CurrentReport(props) {
@@ -21,10 +23,10 @@ function CurrentReport(props) {
           <Card.Body>
             <Card.Title>{raleigh.location.name}, {raleigh.location.region}</Card.Title>
             <Card.Text>
-              <h3>{Math.floor((raleigh.current.temperature * 9 / 5) + 32)}°</h3>
-              <h3>{raleigh.current.weather_descriptions[0]}</h3>
+                  <h3>{Math.floor((raleigh.current.temperature * 9 / 5) + 32)}°
+              {raleigh.current.weather_descriptions[0]}</h3>
               <h3>{raleigh.current.wind_speed} {raleigh.current.wind_dir}</h3>
-              <h3>{raleigh.current.observation_time}</h3>
+                  <h3>{timeFormat(raleigh.location.localtime)}</h3>
               {/* <img src={raleigh.current.weather_icons[0]} /> */}
             </Card.Text>
             <Button variant="primary">Today's Forecast</Button>
@@ -41,10 +43,10 @@ function CurrentReport(props) {
           <Card.Body>
             <Card.Title>{newYork.location.name}, {newYork.location.region}</Card.Title>
             <Card.Text>
-              <h3>{Math.floor((newYork.current.temperature * 9 / 5) + 32)}°</h3>
-              <h3>{newYork.current.weather_descriptions[0]}</h3>
+                  <h3>{Math.floor((newYork.current.temperature * 9 / 5) + 32)}°
+              {newYork.current.weather_descriptions[0]}</h3>
               <h3>{newYork.current.wind_speed} {newYork.current.wind_dir}</h3>
-              <h3>{newYork.current.observation_time}</h3>
+              <h3>{timeFormat(newYork.location.localtime)}</h3>
               {/* <img src={newYork.current.weather_icons[0]} /> */}
             </Card.Text>
             <Button variant="primary">Today's Forecast</Button>
@@ -61,10 +63,10 @@ function CurrentReport(props) {
           <Card.Body>
             <Card.Title>{copenhagen.location.name}, {copenhagen.location.region}</Card.Title>
             <Card.Text>
-              <h3>{Math.floor((copenhagen.current.temperature * 9 / 5) + 32)}°</h3>
-              <h3>{copenhagen.current.weather_descriptions[0]}</h3>
+                  <h3>{Math.floor((copenhagen.current.temperature * 9 / 5) + 32)}°
+              {copenhagen.current.weather_descriptions[0]}</h3>
               <h3>{copenhagen.current.wind_speed} {copenhagen.current.wind_dir}</h3>
-              <h3>{copenhagen.current.observation_time}</h3>
+                  <h3>{timeFormat(copenhagen.location.localtime)}</h3>
               {/* <img src={copenhagen.current.weather_icons[0]} /> */}
             </Card.Text>
             <Button variant="primary">Today's Forecast</Button>
