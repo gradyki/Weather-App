@@ -1,4 +1,6 @@
-.nav {
+/* .nav {
+  display: flex;
+  flex-direction: row;
   background-color: var(--tone6);
   height: 50px;
   border-bottom: 2px solid var(--tone2);
@@ -11,4 +13,53 @@
 
 .nav a:hover {
   color: var(--tone2);
+}
+
+.logo {
+  height: 50px;
+} */
+
+.nav-container {
+  background-color: var(--tone6);
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.image-container img {
+  display: flexbox;
+  justify-content: center;
+  height: 150px;
+  margin: 0 0 0 25px;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-container,
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 25px;
+  font-size: 30px;
+  font-weight: 900 bold;
+  font-family: Alegreya;
+}
+
+.search-container a,
+.contact-container a {
+  color: white;
+  text-shadow: 1px 1px var(--tone2);
+}
+
+.search-container a:hover,
+.contact-container a:hover {
+  text-decoration: none;
+}
+
+img:hover {
+  transform: scale(1.1);
 }
