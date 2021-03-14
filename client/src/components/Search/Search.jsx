@@ -1,24 +1,35 @@
-import './Search.css'
+import "./Search.css";
+import axios from "axios";
+import { useState } from "react";
+import { forecastURL } from "../../services/index";
 
 const Search = (props) => {
+  const [search, setSearch] = useState("");
+  const [forecast, setForcast] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const field = {
+      search,
+    };
+    const resp = await axios.get(`${forecastURL},${search}`);
+    setForcast(resp);
+  };
+
   return (
     <div className="search-container">
-      <section className='search'>
-      <form className="search-input">
-      <i className="fa fa-search"></i>
-            <input
-                id="search-input"
-                value='placeholder'
-          name="Search"
-                name="search"
-                placeholder="Search City"
-                type="text"
-                autoFocus
-            />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input
+          name="name"
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button type="submit">submit</button>
       </form>
-      </section>
-      </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Search
+export default Search;
