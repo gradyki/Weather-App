@@ -1,0 +1,15 @@
+.forecast-title {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 50px 0;
+}
+
+.forecast-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 100px 25px 100px;
+}
+
+.forecast-cards img {
+  height: 250px;
+}
