@@ -1,19 +1,14 @@
 import "./Search.css";
-import axios from "axios";
 import { useState } from "react";
-import { forecastURL } from "../../services/index";
+import { useHistory } from "react-router-dom";
 
 const Search = (props) => {
   const [search, setSearch] = useState("");
-  const [forecast, setForcast] = useState(null);
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const field = {
-      search,
-    };
-    const resp = await axios.get(`${forecastURL},${search}`);
-    setForcast(resp);
+    history.push(`/detail/${search}`);
   };
 
   return (

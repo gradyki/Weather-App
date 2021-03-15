@@ -35,7 +35,7 @@ console.log('below useeffect', raleigh)
         <Route exact path='/'>
           <Home raleigh={raleigh} newYork={newYork} copenhagen={copenhagen}/>
         </Route>
-        <Route path='/detail'>
+        <Route path='/detail/:id'>
           <Detail />
         </Route>
       </Switch>
