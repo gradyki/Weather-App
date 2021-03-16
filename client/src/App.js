@@ -14,14 +14,16 @@ function App() {
   const [copenhagen, setCopenhagen] = useState(null)
 
 
-  useEffect(async() => {
-    const respRal = await axios.get(`${currentURL}Raleigh`)
-    const resNy = await axios.get(`${currentURL}New%York`)
-    const resCop = await axios.get(`${currentURL}Copenhagen`)
-    setRaleigh(respRal.data)
-    setNewYork(resNy.data)
-    setCopenhagen(resCop.data)
-   
+  useEffect(() => {
+    const getLanding = async () => {
+      const respRal = await axios.get(`${currentURL}Raleigh`)
+      const resNy = await axios.get(`${currentURL}New%York`)
+      const resCop = await axios.get(`${currentURL}Copenhagen`)
+      setRaleigh(respRal.data)
+      setNewYork(resNy.data)
+      setCopenhagen(resCop.data)
+    }
+    getLanding()
   }, [])
   
 

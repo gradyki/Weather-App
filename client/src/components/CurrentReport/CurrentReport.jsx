@@ -48,7 +48,7 @@ function CurrentReport(props) {
 
         <div className="report-card">
           {newYork && (
-            <Link to="/detail/newyork">
+            <Link to="/detail/new york">
               <div>
                 <Card style={{ width: "18rem" }}>
                   <Card.Img
