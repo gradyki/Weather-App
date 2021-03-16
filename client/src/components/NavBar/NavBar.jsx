@@ -12,13 +12,11 @@ function NavBar() {
           <img id="logo" src={logo} alt="logo" />
         </NavLink>
       </div>
-      <div className="links-container">
-        <div className="search-container">
-          <Search />
-        </div>
-        <div className="contact-container">
-          <NavLink to="/contact">Contact</NavLink>
-        </div>
+
+      <Search />
+
+      <div className="contact-container">
+        <NavLink to="/contact">Contact</NavLink>
       </div>
     </nav>
   );

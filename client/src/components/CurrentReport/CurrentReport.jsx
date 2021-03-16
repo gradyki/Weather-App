@@ -2,7 +2,7 @@ import "./CurrentReport.css";
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import { timeFormat } from "../../services/utils";
-import copenhagenPhoto from "../../assets/copenhagen2.jpg";
+import copenhagenPhoto from "../../assets/copenhagen3.jpeg";
 
 function CurrentReport(props) {
   const { raleigh, newYork, copenhagen } = props;

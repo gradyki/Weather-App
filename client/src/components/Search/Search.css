@@ -1,0 +1,14 @@
+.search-container{
+  width: 30%;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.search-button{
+  margin-left: 25px;
+}

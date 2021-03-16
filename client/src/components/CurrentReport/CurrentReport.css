@@ -17,6 +17,10 @@
   margin: 25px 25px 25px 25px;
 }
 
+.card img{
+  min-height: 370px;
+}
+
 .card-body {
   background-color: var(--tone1);
   opacity: 0.75;

@@ -1,6 +1,7 @@
 import "./Search.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 
 const Search = (props) => {
   const [search, setSearch] = useState("");
@@ -13,16 +14,19 @@ const Search = (props) => {
 
   return (
     <div className="search-container">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          name="name"
+      <Form onSubmit={handleSubmit}>
+        <Form.Control
           type="text"
+          placeholder="Search City"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button type="submit">submit</button>
-      </form>
+        <div className="search-button">
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </div>
+      </Form>
     </div>
   );
 };
