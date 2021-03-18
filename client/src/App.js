@@ -27,7 +27,7 @@ function App() {
   }, [])
   
 
-   
+  console.log('url check', currentURL)
 
 console.log('below useeffect', raleigh)
 
