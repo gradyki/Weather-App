@@ -16,7 +16,7 @@ function NavBar() {
       <Search />
 
       <div className="contact-container">
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/">Home</NavLink>
       </div>
     </nav>
   );
