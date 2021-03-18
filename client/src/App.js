@@ -22,6 +22,7 @@ function App() {
       setRaleigh(respRal.data)
       setNewYork(resNy.data)
       setCopenhagen(resCop.data)
+      console.log('useEffect', respRal.data )
     }
     getLanding()
   }, [])
