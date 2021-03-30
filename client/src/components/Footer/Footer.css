@@ -1,7 +1,18 @@
-footer {
+.footer-container {
   display: flex;
   justify-content: center;
-  background-color: var(--tone6);
-  border-top: 2px solid var(--tone2);
-  height: 50px;
+  margin-top: 75px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: var(--tone6); */
+  /* border-top: 2px solid var(--tone2); */
+  height: 75px;
+}
+
+footer img {
+  height: 75px;
+  margin: 0 50px 0 50px;
 }
