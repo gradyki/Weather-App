@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import { timeFormat } from "../../services/utils";
 import copenhagenPhoto from "../../assets/copenhagen3.jpeg";
+import raleighPhoto from "../../assets/raleigh.jpeg";
+import newYorkPhoto from "../../assets/newYork.jpeg";
 
 function CurrentReport(props) {
   const { raleigh, newYork, copenhagen } = props;
@@ -19,10 +21,7 @@ function CurrentReport(props) {
             <Link to="/detail/raleigh">
               <div>
                 <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://scontent.cdninstagram.com/v/t51.2885-15/e35/p480x480/132984577_749384349270182_9004728231977785116_n.jpg?tp=1&_nc_ht=scontent.cdninstagram.com&_nc_cat=102&_nc_ohc=Sv-KhgZXjP0AX89AtVH&oh=11497e1933d75a7ed7de9a85c9ff03b4&oe=6069C538"
-                  />
+                  <Card.Img variant="top" src={raleighPhoto} />
                   <Card.Body>
                     <Card.Title>
                       {raleigh.location.name}, {raleigh.location.region}
@@ -51,10 +50,7 @@ function CurrentReport(props) {
             <Link to="/detail/new york">
               <div>
                 <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://scontent.cdninstagram.com/v/t51.2885-15/e35/p480x480/121199423_817695555717838_1618265885191395506_n.jpg?tp=1&_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=495aYkGw28AAX-O76iQ&oh=2a518000e2c882b727b1e1df39983aca&oe=6068758D"
-                  />
+                  <Card.Img variant="top" src={newYorkPhoto} />
                   <Card.Body>
                     <Card.Title>
                       {newYork.location.name}, {newYork.location.region}

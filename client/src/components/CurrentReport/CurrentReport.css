@@ -17,7 +17,7 @@
   margin: 25px 25px 25px 25px;
 }
 
-.card img{
+.card img {
   min-height: 370px;
 }
 
@@ -25,6 +25,7 @@
   background-color: var(--tone1);
   opacity: 0.75;
   color: var(--tone5);
+  height: 30vh;
 }
 
 .current-section a {
