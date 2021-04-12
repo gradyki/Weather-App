@@ -8,8 +8,8 @@ import { forecastURL } from "../../services/index";
 import { Card, CardDeck, Spinner } from "react-bootstrap";
 import sun from "../../assets/sun2.jpg";
 import moon from "../../assets/Moon.jpg";
-import weather from "../../assets/Weather.jpg";
 import { timeFormat } from "../../services/utils";
+import SearchFailed from "../../screens/SearchFailed/SearchFailed";
 
 function Detail() {
   const [forecast, setForecast] = useState(null);
@@ -38,7 +38,7 @@ function Detail() {
   }
   console.log("forecast", forecast);
   if (forecast.success === false) {
-    return <h1>oops something went wrong</h1>;
+    return <SearchFailed />;
   } else {
     return (
       <div>

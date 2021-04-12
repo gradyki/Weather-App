@@ -6,7 +6,13 @@ function Footer() {
   return (
     <div className="footer-container">
       <footer>
-        <img src={linkedIn} />
+        <a
+          href="https://www.linkedin.com/in/grady-king/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={linkedIn} />
+        </a>
         <img src={github} />
       </footer>
     </div>

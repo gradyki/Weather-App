@@ -1,0 +1,8 @@
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  font-weight: 900;
+  font-size: large;
+}
