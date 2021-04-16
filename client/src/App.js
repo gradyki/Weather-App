@@ -22,15 +22,12 @@ function App() {
       setRaleigh(respRal.data)
       setNewYork(resNy.data)
       setCopenhagen(resCop.data)
-      console.log('useEffect', respRal.data )
     }
     getLanding()
   }, [])
   
 
-  console.log('url check', currentURL)
-
-console.log('below useeffect', raleigh)
+ 
 
   return (
     <div className="App">

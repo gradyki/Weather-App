@@ -8,8 +8,10 @@ import { forecastURL } from "../../services/index";
 import { Card, CardDeck, Spinner } from "react-bootstrap";
 import sun from "../../assets/sun2.jpg";
 import moon from "../../assets/Moon.jpg";
-import { timeFormat } from "../../services/utils";
+import { timeFormat, dateFormat } from "../../services/utils";
 import SearchFailed from "../../screens/SearchFailed/SearchFailed";
+import ForcastReport from "../../components/ForecastReport/ForecastReport";
+import ForecastReport from "../../components/ForecastReport/ForecastReport";
 
 function Detail() {
   const [forecast, setForecast] = useState(null);
@@ -36,7 +38,12 @@ function Detail() {
       </div>
     );
   }
-  console.log("forecast", forecast);
+
+  let dateFormatted = dateFormat(forecast.location.localtime);
+  let forecastInfo = dayForecast[dateFormatted];
+
+  console.log("info", forecastInfo);
+
   if (forecast.success === false) {
     return <SearchFailed />;
   } else {
@@ -63,7 +70,8 @@ function Detail() {
                   <Card.Title>Current</Card.Title>
                   <Card.Text>
                     <h5>
-                      {Math.floor((forecast.current.temperature * 9) / 5 + 32)}°{" "}
+                      {Math.floor((forecast.current.temperature * 9) / 5 + 32)}
+                      °F
                     </h5>
                     <h5>Humidity: {forecast.current.humidity} %</h5>
                     <h5>
@@ -80,18 +88,9 @@ function Detail() {
                 </Card.Footer>
               </Card>
             </div>
-            {/* <div className="forecast-card">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={weather} />
-              <Card.Body>
-                <Card.Title>Forecast</Card.Title>
-                <Card.Text>Test</Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </div> */}
+          </div>
+          <div>
+            <ForecastReport forecastInfo={forecastInfo} />
           </div>
         </div>
         <Footer />
