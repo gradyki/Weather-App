@@ -1,10 +1,9 @@
 import { Card } from "react-bootstrap";
+import "./ForecastReport.css";
 
 export default function ForecastReport(props) {
   const { forecastInfo } = props;
   let astro = forecastInfo.astro;
-  console.log("this is forecast props", forecastInfo);
-  console.log(astro);
   return (
     <div className="forecast-info-card">
       <Card style={{ width: "18rem" }}>
