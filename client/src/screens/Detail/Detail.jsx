@@ -8,6 +8,8 @@ import { forecastURL } from "../../services/index";
 import { Card, CardDeck, Spinner } from "react-bootstrap";
 import sun from "../../assets/sun2.jpg";
 import moon from "../../assets/Moon.jpg";
+import dayBackground from "../../assets/dayBackground.mp4";
+import nightSky from "../../assets/nightSky.mp4";
 import { timeFormat, dateFormat } from "../../services/utils";
 import SearchFailed from "../../screens/SearchFailed/SearchFailed";
 import ForcastReport from "../../components/ForecastReport/ForecastReport";
@@ -39,18 +41,45 @@ function Detail() {
     );
   }
 
-  let dateFormatted = dateFormat(forecast.location.localtime);
-  let forecastInfo = dayForecast[dateFormatted];
-
-  console.log("info", forecastInfo);
-
   if (forecast.success === false) {
     return <SearchFailed />;
   } else {
+    let dateFormatted = dateFormat(forecast.location.localtime);
+    let forecastInfo = dayForecast[dateFormatted];
     return (
       <div>
         <NavBar />
-        <div className="forecast-container">
+        <div className="detail-page-container">
+          <div className="video-background">
+            <video
+              src={forecast.current.is_day === "yes" ? dayBackground : nightSky}
+              autoPlay
+              loop
+              muted
+            ></video>
+          </div>
+          <div className="detail-forecast-container">
+            <div className="detail-forecast">
+              <h1>
+                {forecast.location.country === "United States of America"
+                  ? `${forecast.location.name} , ${forecast.location.region}`
+                  : `${forecast.location.name} , ${forecast.location.country}`}
+              </h1>
+              <h5>
+                {Math.floor((forecast.current.temperature * 9) / 5 + 32)}
+                °F
+              </h5>
+              <h5>Humidity: {forecast.current.humidity} %</h5>
+              <h5>
+                Wind: {forecast.current.wind_speed} mph{" "}
+                {forecast.current.wind_dir}
+              </h5>
+              <h5>{timeFormat(forecast.location.localtime)}</h5>
+              <h5>{forecast.current.weather_descriptions[0]}</h5>
+            </div>
+          </div>
+        </div>
+        {/* <div className="forecast-container">
           <div className="forecast-title">
             <h1>
               {forecast.location.country === "United States of America"
@@ -92,8 +121,7 @@ function Detail() {
           <div>
             <ForecastReport forecastInfo={forecastInfo} />
           </div>
-        </div>
-        <Footer />
+        </div> */}
       </div>
     );
   }

@@ -1,4 +1,4 @@
-.forecast-title {
+/* .forecast-title {
   display: flex;
   justify-content: center;
   margin: 50px 0 50px 0;
@@ -20,4 +20,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+.detai-page-container {
+  display: flex;
+  align-items: center;
+}
+
+.video-background video {
+  position: absolute;
+}
+
+.detail-forecast-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-forecast {
+  margin-top: 33vh;
+  color: white;
 }
