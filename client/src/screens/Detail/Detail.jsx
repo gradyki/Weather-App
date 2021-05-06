@@ -59,23 +59,37 @@ function Detail() {
             ></video>
           </div>
           <div className="detail-forecast-container">
-            <div className="detail-forecast">
+            <div
+              className={
+                forecast.current.is_day === "yes"
+                  ? "detail-forecast"
+                  : "detail-forecast-night"
+              }
+            >
               <h1>
                 {forecast.location.country === "United States of America"
                   ? `${forecast.location.name} , ${forecast.location.region}`
                   : `${forecast.location.name} , ${forecast.location.country}`}
               </h1>
-              <h5>
-                {Math.floor((forecast.current.temperature * 9) / 5 + 32)}
-                °F
-              </h5>
-              <h5>Humidity: {forecast.current.humidity} %</h5>
-              <h5>
-                Wind: {forecast.current.wind_speed} mph{" "}
-                {forecast.current.wind_dir}
-              </h5>
-              <h5>{timeFormat(forecast.location.localtime)}</h5>
-              <h5>{forecast.current.weather_descriptions[0]}</h5>
+              <div className="both-sides">
+                <div className="left-side">
+                  <h3>Current</h3>
+                  <h5>
+                    {Math.floor((forecast.current.temperature * 9) / 5 + 32)}
+                    °F
+                  </h5>
+                  <h5>Humidity: {forecast.current.humidity} %</h5>
+                  <h5>
+                    Wind: {forecast.current.wind_speed} mph{" "}
+                    {forecast.current.wind_dir}
+                  </h5>
+                  <h5>{timeFormat(forecast.location.localtime)}</h5>
+                  <h5>{forecast.current.weather_descriptions[0]}</h5>
+                </div>
+                <div className="right-side">
+                  <ForecastReport forecastInfo={forecastInfo} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +133,7 @@ function Detail() {
             </div>
           </div>
           <div>
-            <ForecastReport forecastInfo={forecastInfo} />
+            
           </div>
         </div> */}
       </div>

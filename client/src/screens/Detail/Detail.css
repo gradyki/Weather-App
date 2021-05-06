@@ -37,7 +37,24 @@
   justify-content: center;
 }
 
+.both-sides {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+.both-sides h5 {
+  margin: 10px 0 10px 0;
+}
+
 .detail-forecast {
   margin-top: 33vh;
+  font-weight: 900;
+  color: var(--tone6);
+}
+
+.detail-forecast-night {
+  margin-top: 33vh;
+  font-weight: 900;
   color: white;
 }
