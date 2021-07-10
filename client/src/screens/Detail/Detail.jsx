@@ -44,8 +44,13 @@ function Detail() {
   if (forecast.success === false) {
     return <SearchFailed />;
   } else {
-    let dateFormatted = dateFormat(forecast.location.localtime);
-    let forecastInfo = dayForecast[dateFormatted];
+    const dateFormatted = dateFormat(forecast.location.localtime);
+    const key = Object.keys(dayForecast)[0]
+    
+    
+    const forecastInfo = dayForecast[key];
+    console.log('current testing', forecastInfo)
+
     return (
       <div>
         <NavBar />
